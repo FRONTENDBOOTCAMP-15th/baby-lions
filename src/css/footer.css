@@ -1,0 +1,236 @@
+:root {
+  --default-color: #fff;
+  --default-bgc: #0075ff;
+  --address-font: #a6a6a6;
+  --small-size: 0.75rem;
+  --medium-size: 1rem;
+  --large-size: 1.25rem;
+  --max-width: 1280px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-container {
+  background-color: var(--default-bgc);
+  color: var(--default-color);
+
+  display: flex;
+  flex-flow: column wrap;
+  gap: 2rem;
+  padding: 1.5rem;
+  min-width: 300px;
+
+  .footer-top,
+  .footer-content,
+  .footer-nav,
+  .footer-address {
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    gap: 1rem;
+
+    a {
+      font-size: var(--medium-size);
+      font-weight: 500;
+    }
+  }
+
+  .footer-content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .list-title {
+        font-size: var(--large-size);
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      li {
+        font-size: var(--medium-size);
+        margin-top: 0.75rem;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      justify-content: flex-start;
+      gap: 200px;
+    }
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-flow: column wrap;
+    inline-size: 100%;
+    margin: 2rem auto;
+    gap: 2.25rem;
+
+    .nav-group:first-child,
+    .nav-group:nth-child(2) {
+      display: inline-flex;
+      flex-flow: row nowrap;
+      align-items: center;
+    }
+
+    .nav-group:first-child {
+      gap: 5.875rem;
+
+      img {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    .nav-group:nth-child(2) {
+      gap: 3.75rem;
+
+      .icon-with-text {
+        display: inherit;
+        align-items: center;
+        gap: 0.25rem;
+      }
+    }
+
+    @media (min-width: 900px) and (max-width: 1279px) {
+      flex-flow: row wrap;
+
+      .nav-group {
+        flex: 1 1 45%;
+        align-items: center;
+      }
+
+      .nav-group:nth-child(2) {
+        justify-content: flex-end;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      flex-flow: row nowrap;
+
+      .nav-group:first-child,
+      .nav-group:nth-child(2) {
+        flex: 1 1 40%;
+        align-items: center;
+      }
+
+      .nav-group:last-child {
+        display: contents;
+      }
+    }
+  }
+
+  .footer-address,
+  address {
+    color: var(--address-font);
+    font-size: var(--small-size);
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    font-style: normal;
+  }
+
+  .footer-address {
+    inline-size: 100%;
+    max-width: 1280px;
+    gap: 2rem;
+    margin: 0 auto;
+    align-items: flex-start;
+
+    address {
+      display: flex;
+      flex: 1 1 80%;
+      flex-flow: row wrap;
+      align-items: center;
+      gap: 2rem;
+      min-width: 0;
+
+      p {
+        white-space: nowrap;
+        flex-shrink: 0;
+        align-self: center;
+      }
+
+      span {
+        flex: 1 1 auto;
+        min-width: 0;
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
+    }
+
+    .footer-information {
+      display: flex;
+      flex: 0 0 auto;
+      gap: 2rem;
+      align-items: center;
+      white-space: nowrap;
+    }
+  }
+
+  @media (max-width: 1279px) {
+    .footer-address {
+      flex-direction: column;
+
+      address {
+        display: inline-flex;
+        flex-flow: row nowrap;
+        align-items: center;
+
+        p {
+          align-self: center;
+          margin-bottom: 0.5rem;
+        }
+
+        span {
+          flex: 1 1 100%;
+        }
+      }
+
+      .footer-information {
+        margin-top: 1rem;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .footer-address {
+      flex-direction: row;
+      align-items: center;
+
+      address {
+        flex-flow: row nowrap;
+        align-items: center;
+
+        p {
+          white-space: nowrap;
+          flex-shrink: 0;
+          align-self: center;
+        }
+
+        span {
+          flex: 1 1 auto;
+          min-width: 0;
+        }
+      }
+
+      .footer-information {
+        align-items: center;
+      }
+    }
+  }
+}
