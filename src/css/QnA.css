@@ -1,0 +1,81 @@
+:root {
+  --bottoom-line: #e0e0e0;
+  --strong-bottom: #a6a6a6;
+}
+
+span {
+  font-weight: bold;
+}
+ul {
+  list-style: none; /* 불릿 제거 */
+  padding: 0;
+  margin: 0;
+}
+strong {
+  text-decoration: underline;
+  text-decoration-color: var(--bottoom-line);
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.5625rem; /* 밑줄과 텍스트 간 간격 조절 */
+}
+.q-inner {
+  border-bottom: 1px solid var(--strong-bottom);
+  padding-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 2.25rem;
+  align-items: center;
+}
+.question li {
+  font-size: 1rem;
+  padding: 12px 64px 12px 16px;
+}
+.q-text {
+  width: 100%;
+  display: block;
+  padding-bottom: 4px;
+}
+
+.faq-list {
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.faq-list li {
+  margin-bottom: 0.875rem;
+  line-height: 1.5;
+  font-size: 0.9375rem;
+}
+
+/*  501px 이상 ~ 900px 이하 (태블릿) */
+@media (min-width: 501px) and (max-width: 900px) {
+  h2 {
+    font-size: 1.875rem; /* 30px */
+  }
+  .question {
+    padding: 32px 56px 34px;
+  }
+}
+@media (max-width: 500px) {
+  .question {
+    padding: 32px 16px 34px;
+  }
+}
+/*  901px 이상 ~ 1279px 이하 (중형 데스크탑) */
+@media (min-width: 901px) and (max-width: 1279px) {
+  h2 {
+    font-size: 2.5rem; /* 40px */
+  }
+  .question {
+    padding: 2rem 3.5rem;
+  }
+}
+
+/*  1280px 이상 (대형 화면) */
+@media (min-width: 1280px) {
+  h2 {
+    font-size: 3.3125rem; /* 53px */
+  }
+  .question {
+    padding: 64px;
+  }
+}
