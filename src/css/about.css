@@ -13,7 +13,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr; /*기본 2열*/
   width: 100%;
-  height: 100vh;
   justify-items: center;
   align-items: start;
   gap: 2.25rem;
